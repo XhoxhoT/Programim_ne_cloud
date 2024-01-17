@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: backend
-        image: xhoni1/fti:latest
+        image: xhoni/fti:latest
         imagePullPolicy: Always
         securityContext:
           allowPrivilegeEscalation: false
