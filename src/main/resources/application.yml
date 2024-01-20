@@ -18,3 +18,14 @@ security:
   user:
     name: user
 password: user
+
+#logging properties
+logging:
+  level:
+    root: INFO
+    com.hendisantika.springbootrestapipostgresql.controller: DEBUG
+  file:
+    name: C:\Log\lab.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"

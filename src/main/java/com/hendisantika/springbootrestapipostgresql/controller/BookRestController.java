@@ -2,6 +2,8 @@ package com.hendisantika.springbootrestapipostgresql.controller;
 
 import com.hendisantika.springbootrestapipostgresql.entity.Book;
 import com.hendisantika.springbootrestapipostgresql.repository.BookRepository;
+
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +16,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -39,9 +44,13 @@ public class BookRestController {
     public ResponseEntity<?> addBook(@RequestBody Book book) {
         return new ResponseEntity<>(repository.save(book), HttpStatus.CREATED);
     }
+    
 
     @GetMapping
     public ResponseEntity<Collection<Book>> getAllBooks() {
+
+        private static final Logger logger = LoggerFactory.getLogger(Controller.class);
+
         return new ResponseEntity<>(repository.findAll(), HttpStatus.OK);
     }
 
